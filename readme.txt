@@ -1,4 +1,4 @@
-Adding code to local repository:
+ Adding code to local repository:
 1) git init 
 2) git add .
 3) git commit -m "adding code to repository"
@@ -13,3 +13,10 @@ Specifying -b causes a new branch
 Ex.: git checkout -b dev_andrew
 Switch between branches
 1) git checkout other_branch_name
+
+ лонировать удаленный репо-ий, создать локальный(копи€)
+1) git clone https://github.com/g1er/Andrew.git
+
+«аписать код в удаленный репо-ий:
+1) git push  <REMOTENAME> <BRANCHNAME> 
+git push origin master 
