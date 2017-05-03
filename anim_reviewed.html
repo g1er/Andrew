@@ -1,0 +1,149 @@
+﻿<!--
+* Best practises:
+* 1. use camelCase naming convention for functions and vars
+* 2. don't hezitate to use long descriptive names for vars and functions - will help when app will grow or work in group with other devs
+* 3. put all your functions and logic inside 'body' tags (not in the 'head'), but external links (external sourcecode ) can be there   
+* 4. try to break logic by separate functional blocks (sometimes it helps to solve a complicated problem)
+* 5. try avoid usage of global vars (without 'var' definition at the front of a variable) when app will grow it will polute names and sae names will conflict
+* 6. use comments - it helps when code is growing or when few devs are working on it
+* 
+*
+-->
+<html>
+	<head>
+		<title>Заголовок Default</title>
+	</head>
+	<body>
+		
+		<img src="http://media.lpgenerator.ru/images/245893/kachestvo-100.png" alt="Качество" width=200 height=250>
+		
+		<script language="javascript">
+		// defining all vars 
+		var changeSizeInterval;
+		
+		//define the default sizes
+		var defaultWidth = document.images[0].width;
+		var defaultHeight = document.images[0].height;
+
+		var dimentions = ['Height','Width'];
+		//initialization of input process of two params : 'Height' & 'Width' (function is defined below); 		
+		startProcess(dimentions);
+
+		function startProcess(dimentions) {
+			var HeightParams, WidthParams;
+			
+			// do inputs of 'Height' & 'Width' in loop:
+			// i=0 of 'Height' and then i=1 of 'Width'
+			for (var i = 0; i < dimentions.length; i++) {
+				if (dimentions[i] == 'Height') {
+					HeightParams = doInput(dimentions[i]);
+				}
+				if (dimentions[i] == 'Width') {
+					WidthParams = doInput(dimentions[i]);
+				}			
+			}
+
+			clearInterval(changeSizeInterval);
+			changeSizeInterval = setInterval(function() {
+				changingSize(HeightParams, WidthParams);
+			}, 50);
+		}
+		// input of dimention Height and Weight in loop
+		function doInput(dimention) {
+
+				var inputValue = prompt("Введите " + dimention + ": ", 350) || 350;
+
+				//defaultHeight and defaultWidth values
+				var defaultValue = eval("default" + dimention);
+				var dimentionParams = {};
+				//var HeightParams = {} and WidthParams = {} definitions
+				eval("var " + dimention + "Params={};");
+
+				if(checkInputValue(inputValue, defaultValue) == 'bigSize') {		  
+				  dimentionParams = {
+					growing:true,
+					inputSize: inputValue,
+					imageRelativeSize:'bigSize',
+					step:1				  
+				  }					
+				} else if (checkInputValue(inputValue, defaultValue) == 'smallSize') {
+				  dimentionParams = {
+					growing:false,
+					inputSize: inputValue,
+					imageRelativeSize:'smallSize',
+					step:-1				  
+				  }
+
+				} else if(checkInputValue(inputValue, defaultValue) == 'sameSize') {
+				  dimentionParams = {
+					growing:false,
+					inputSize: inputValue,
+					imageRelativeSize:'sameSize',
+					step:0				  
+				  }
+				} else {
+					doInput(dimention);
+				}				
+				return dimentionParams;
+		}
+
+		//validation of input 
+		function checkInputValue(inputValue, defaultValue) {
+			var size;
+
+			// if not validated redirect to input again
+			if (inputValue == defaultValue || 800 < inputValue < 0 || isNaN(inputValue)) {
+				size = 'notValidInput';
+			} else if (inputValue > defaultValue) {
+				size = 'bigSize';
+			} else if (inputValue < defaultValue) {
+				size = 'smallSize';
+			} else if (inputValue == defaultValue) {
+				size = 'sameSize';
+			} else {
+				size = 'notValidInput';
+			}
+			
+			return size;
+		}
+		
+		// definition of first function for interval
+		function changingSize(HeightParams, WidthParams) {
+		
+			var finalWidth, finalHeight;
+
+			if(HeightParams.imageRelativeSize == 'bigSize' || WidthParams.imageRelativeSize == 'bigSize') {
+				finalHeight = HeightParams.growing ? HeightParams.inputSize : defaultHeight;
+				finalWidth  = WidthParams.growing ? WidthParams.inputSize : defaultWidth;
+			} else if(HeightParams.imageRelativeSize == 'smallSize' || WidthParams.imageRelativeSize == 'smallSize') {
+				finalHeight = HeightParams.growing ?  defaultHeight : HeightParams.inputSize;
+				finalWidth  =  WidthParams.growing ?  defaultWidth  : WidthParams.inputSize;
+			} else {
+				return;
+			}
+
+			if (document.images[0].width == finalWidth && document.images[0].height == finalHeight) {
+				//switch on oposite direction
+				HeightParams.step = - HeightParams.step;
+				WidthParams.step = - WidthParams.step;
+				WidthParams.growing = !WidthParams.growing;
+				HeightParams.growing = !HeightParams.growing;
+				
+				clearInterval(changeSizeInterval);
+				changeSizeInterval = setInterval(function() {
+					changingSize(HeightParams, WidthParams);
+				}, 50);
+			} else {
+				
+				if (document.images[0].width != finalWidth ) {
+					document.images[0].width = document.images[0].width + WidthParams.step;
+				}
+				
+				if (document.images[0].height != finalHeight ) {
+					document.images[0].height = document.images[0].height + WidthParams.step;
+				}
+			}
+		}
+		</script>
+	</body>
+</html>
