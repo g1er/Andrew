@@ -1,0 +1,75 @@
+﻿<html>
+	<head>
+	<meta http-equiv="content type" content="text/html; charset=windows-1251">
+		<title>Заголовок Default</title>
+		<script language="javascript">		
+		function fcwup() {
+		if (m < x || m < a)
+		document.images[0].width = document.images[0].width + 1;
+		if (n < y || n < b)
+		document.images[0].height = document.images[0].height + 1;
+		m = document.images[0].width;
+		n = document.images[0].height;
+		if ((m == x || m == a) && (n == y || n == b))
+			(clearInterval(c), c = setInterval(fcwdn, 50));
+		}
+		
+		function fcwdn() {
+		if (m > a || m > x)
+		document.images[0].width = document.images[0].width - 1;
+		if (n > b || n > y)
+		document.images[0].height = document.images[0].height - 1;
+		m = document.images[0].width;
+		n = document.images[0].height;
+		if ((m == a || m == x) && (n == b || n == y))
+			(clearInterval(c), c = setInterval(fcwup, 50));
+		}
+		
+		function fcrndm1() {
+		if (m < x || m < a)
+		document.images[0].width = document.images[0].width + 1;
+		if (n > b || n > y)
+		document.images[0].height = document.images[0].height - 1;
+		m = document.images[0].width;
+		n = document.images[0].height;
+		if ((m == a || m == x) && (n == b || n == y))
+			(clearInterval(c), c = setInterval(fcrndm2, 50));
+		}
+		
+		function fcrndm2() {
+		if (m > a || m > x)
+		document.images[0].width = document.images[0].width - 1;
+		if (n < y || n < b)
+		document.images[0].height = document.images[0].height + 1;
+		m = document.images[0].width;
+		n = document.images[0].height;
+		if ((m == a || m == x) && (n == b || n == y))
+			(clearInterval(c), c = setInterval(fcrndm1, 50));
+		}
+		</script>
+	</head>
+	<body>
+		<img src="http://media.lpgenerator.ru/images/245893/kachestvo-100.png" alt="Качество" width=200 height=250>
+		<script language="javascript">
+		alert("Данная программа осуществляет анимацию путем бесконечного изменения ширины и высоты картинки, от исходных размеров до заданных. Даже с условием того, что высота может быть больше исходной, а ширина меньше, и наоборот. Прошу убедиться.");
+		var x = +prompt("Введите ширину: ", 270) || 270;
+		var y = +prompt("Введите высоту: ", 310) || 310;
+		var a = document.images[0].width;
+		var b = document.images[0].height;
+		var m = a;
+		var n = b;
+		if (a < x && b < y) {
+			var c = (setInterval(fcwup, 50));
+		}
+		if (a > x && b > y) {
+			var c = (setInterval(fcwdn, 50));
+		}
+		if (a < x && b > y) {
+			var c = (setInterval(fcrndm1, 50));
+		}
+		if (a > x && b < y) {
+			var c = (setInterval(fcrndm2, 50));
+		}
+		</script>
+	</body>
+</html>
