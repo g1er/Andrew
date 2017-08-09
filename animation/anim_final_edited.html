@@ -1,0 +1,75 @@
+﻿<html>
+	<head>
+	<meta http-equiv="content type" content="text/html; charset=windows-1251">
+		<title>Заголовок Default</title>
+		<script language="javascript">		
+		function func_width_up() {
+		if (var_width < input_width || var_width < perm_width)
+			document.images[0].width = document.images[0].width + 1;
+		if (var_height < input_heigth || var_height < perm_heigth)
+			document.images[0].height = document.images[0].height + 1;
+		var_width = document.images[0].width;
+		var_height = document.images[0].height;
+		if ((var_width == input_width || var_width == perm_width) && (var_height == input_heigth || var_height == perm_heigth))
+			(clearInterval(start_anim), start_anim = setInterval(func_width_down, 50));
+		}
+		
+		function func_width_down() {
+		if (var_width > perm_width || var_width > input_width)
+			document.images[0].width = document.images[0].width - 1;
+		if (var_height > perm_heigth || var_height > input_heigth)
+			document.images[0].height = document.images[0].height - 1;
+		var_width = document.images[0].width;
+		var_height = document.images[0].height;
+		if ((var_width == perm_width || var_width == input_width) && (var_height == perm_heigth || var_height == input_heigth))
+			(clearInterval(start_anim), start_anim = setInterval(func_width_up, 50));
+		}
+		
+		function func_random1() {
+		if (var_width < input_width || var_width < perm_width)
+			document.images[0].width = document.images[0].width + 1;
+		if (var_height > perm_heigth || var_height > input_heigth)
+			document.images[0].height = document.images[0].height - 1;
+		var_width = document.images[0].width;
+		var_height = document.images[0].height;
+		if ((var_width == perm_width || var_width == input_width) && (var_height == perm_heigth || var_height == input_heigth))
+			(clearInterval(start_anim), start_anim = setInterval(func_random2, 50));
+		}
+		
+		function func_random2() {
+		if (var_width > perm_width || var_width > input_width)
+			document.images[0].width = document.images[0].width - 1;
+		if (var_height < input_heigth || var_height < perm_heigth)
+			document.images[0].height = document.images[0].height + 1;
+		var_width = document.images[0].width;
+		var_height = document.images[0].height;
+		if ((var_width == perm_width || var_width == input_width) && (var_height == perm_heigth || var_height == input_heigth))
+			(clearInterval(start_anim), start_anim = setInterval(func_random1, 50));
+		}
+		</script>
+	</head>
+	<body>
+		<img src="http://media.lpgenerator.ru/images/245893/kachestvo-100.png" alt="Качество" width=200 height=250>
+		<script language="javascript">
+		alert("Данная программа осуществляет анимацию путем бесконечного изменения ширины и высоты картинки, от исходных размеров до заданных. Даже с условием того, что высота может быть больше исходной, а ширина меньше, и наоборот. Прошу убедиться.");
+		var input_width = +prompt("Введите ширину: ", 270) || 270;
+		var input_heigth = +prompt("Введите высоту: ", 310) || 310;
+		var perm_width = document.images[0].width;
+		var perm_heigth = document.images[0].height;
+		var var_width = perm_width;
+		var var_height = perm_heigth;
+		if (perm_width < input_width && perm_heigth < input_heigth) {
+			var start_anim = (setInterval(func_width_up, 50));
+		}
+		if (perm_width > input_width && perm_heigth > input_heigth) {
+			var start_anim = (setInterval(func_width_down, 50));
+		}
+		if (perm_width < input_width && perm_heigth > input_heigth) {
+			var start_anim = (setInterval(func_random1, 50));
+		}
+		if (perm_width > input_width && perm_heigth < input_heigth) {
+			var start_anim = (setInterval(func_random2, 50));
+		}
+		</script>
+	</body>
+</html>
