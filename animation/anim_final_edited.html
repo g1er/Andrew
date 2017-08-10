@@ -46,6 +46,11 @@
 		if ((var_width == perm_width || var_width == input_width) && (var_height == perm_heigth || var_height == input_heigth))
 			(clearInterval(start_anim), start_anim = setInterval(func_random1, 50));
 		}
+		//it will blow up in 7+ secs
+		setTimeout(function() {
+		   start_anim = null;	
+		}, 7000);
+
 		</script>
 	</head>
 	<body>
