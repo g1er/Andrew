@@ -1,0 +1,21 @@
+﻿<html>
+<head>
+</head>
+<body onLoad = "alarm_clock()">
+<script language = "JavaScript">
+var wakeup_hours = +prompt("Введите часы подъема:", 07);
+var wakeup_minutes = +prompt("Введите минуты подъема:", 00);
+function alarm_clock(){
+var time = new Date();
+var hours = time.getHours();
+var minutes = time.getMinutes();
+var seconds = time.getSeconds();
+if (hours == wakeup_hours && minutes == wakeup_minutes) {
+alert("Пора вставать!!!");
+return;
+}
+setTimeout(alarm_clock, 10000);
+}
+</script>
+</body>
+</html>
