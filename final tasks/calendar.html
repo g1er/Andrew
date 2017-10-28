@@ -4,6 +4,7 @@
 var get_date = new Date();
 var current_date = get_date.getDate();
 var current_day = get_date.getDay();
+// Not clear what the get_number is supposed to do? Does not matter what I enter I see same result.
 var get_number = +prompt("Введите число, соответствующее дню недели (Пн - 1, Вт - 2 и т.д.), с которого начался текущий месяц:");
 	if (get_number > 7) alert ("Допустимы только цифры от 1 до 7. Введите цифру заново.");
 function mark_date(){
@@ -35,16 +36,20 @@ document.write("<td>" + "<b>");
 document.write("</td>" + "</b>");
 }
 document.write("</tr>");
-for (j=1; j<=7; j++){
-	if (start_day == current_date - 1) 
-			document.write("<td bgcolor='orange'>");
-		else document.write("<td>");
-	if (j >= get_number) start_day++;
-	else continue;
-	document.write(start_day);
-	document.write("</td>");
-}
-for (i=1; i<=6; i++){
+// What this block is supposed to do? I commented out and nothing changed.
+// for (j=1; j<=7; j++){
+// 	if (start_day == current_date - 1) 
+// 			document.write("<td bgcolor='orange'>");
+// 		else document.write("<td>");
+// 	if (j >= get_number) start_day++;
+// 	else continue;
+// 	document.write(start_day);
+// 	document.write("</td>");
+// }
+
+// I changed the array length and assign a var to the number of rows:
+var number_raws = 5; //I defined here, but it's better move up where all vars are defined
+for (i=1; i<=number_raws.length; i++){
 	document.write("<tr>");
 		for (j=1; j<=7; j++){
 		if (start_day == current_date - 1) 
