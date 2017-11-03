@@ -1,0 +1,59 @@
+﻿<html>
+<head>
+<script language = "JavaScript">
+var get_date = new Date();
+var current_date = get_date.getDate();
+var current_day = get_date.getDay();
+
+var month_first_day = +prompt("Введите число, соответствующее дню недели (Пн - 1, Вт - 2 и т.д.), с которого начался текущий месяц:");
+if (month_first_day > 7) alert ("Допустимы только цифры от 1 до 7. Введите цифру заново.");
+
+function mark_date(){
+	var calendar_iteration_day = 1;
+
+	// document.write("<table cellspacing=\"0\" cellpadding=\"10\">");
+	var table = document.createElement("table");
+	var tr_header = document.createElement("tr");
+	document.body.appendChild(table);
+	table.appendChild(tr_header);
+	var days = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+	for(var i=0; i< days.length; i++) {
+
+		var td = document.createElement('td');
+		td.innerHTML = days[i];
+		td.style.fontWeight = "900";
+		td.style.padding = "10px";
+		tr_header.appendChild(td);
+
+	}
+
+	var number_of_raws = 6;
+	//не понятно, для чего содавать отдельную переменную и давать ей занчение, если это же значение можно сразу вставить
+	//в условие
+	for (i=1; i<=number_of_raws; i++) {
+		var row = document.createElement("tr");
+
+		for (j = 1; j <= 7; j++) {
+			var td = document.createElement("td");
+			if (calendar_iteration_day == current_date) {	
+				td.style.backgroundColor = "orange";
+			}
+			// checking for the first week of month
+			if((month_first_day > j) && (i == 1)) {
+				td.innerHTML = '';
+			} else {
+				td.innerHTML = calendar_iteration_day;
+				calendar_iteration_day++;
+			}			
+			row.appendChild(td);
+			table.appendChild(row);
+			if (calendar_iteration_day == 32) return;
+		}
+	}
+}
+
+</script>
+</head>
+<body onLoad="mark_date()">
+</body>
+</html>

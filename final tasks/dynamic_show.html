@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic</title>
+</head>
+<body onLoad="dynamic_content()">
+<div id='container'>
+	<button onclick="show_elements()">Show element</button>
+	<button onclick="hide_elements()">Hide element</button>
+</div>
+<script type="text/javascript">
+	// define as global vars and use inside functions
+	var unordered_list, 
+		div;
+
+	function dynamic_content(){
+		// uncomment the next line and try to run (that will comment out all content below the line since this syntax is used for comments )
+		// document.write('<!--');
+		unordered_list = document.createElement('ul');
+		for (var i=0; i<10;i++) {
+			var list = document.createElement('li');
+			list.innerHTML = i + ' element';
+			unordered_list.appendChild(list);
+		}
+	}
+	function show_elements() {
+		// using selector getElementById('id_name') we point to (or grab) the element; container is an id of our div element (line 7)
+		var div = document.getElementById('container');
+		div.appendChild(unordered_list);
+	}
+	function hide_elements() {
+		// using selector getElementById('id_name') we point to the element; container is an id of our div element (line 7)
+		var div = document.getElementById('container');
+		// even we remove the element 'unordered_list' it still exists in memory with all appended elements and we can append it again when click show_elements:
+		div.removeChild(unordered_list);
+		//here we show that the elements we created before still exists in the memory (please chck in console)
+		console.log(unordered_list);
+	}
+</script>
+</body>
+</html>
