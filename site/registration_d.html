@@ -1,0 +1,112 @@
+﻿<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="content type" content="text/html; charset=windows-1251">
+		<title>Кухонное технологическое оборудование</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			body{
+				padding-top: 51px;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="images/logo2.jpg" width=100% height=20% border="3" alt="Шапка сайта">
+	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+		<div class="container-fluid">
+		<div class="navbar-header">
+    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-0">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand">Umbrella Corp</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-0">
+			<ul class="nav navbar-nav">
+			<li  class="active"><a href="index_d.html">Главная</a>
+			<li><a href="about.html">О нас</a>
+			<li><a href="production.html">Наша продукция</a>
+			<li><a href="contacts.html">Контакты</a>
+			<li><a href="registration.html">Регистрация</a>
+			</ul>
+		</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+		</div>
+		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+		<form role="form" action="#" method="post" class="form-horizontal">
+		<div class="container-fluid"><img src="images/reg_button.jpg" alt="Регистрация" width=200></div>
+		<br>
+		<div class="form-group">
+			<label for="login_name" class="col-md-2">Логин:</label>
+			<div class="col-md-10">
+			<input type="text" id="login_name" class="form-control input-sm" placeholder="Введите Логин">
+		</div>
+		</div>
+		<div class="form-group">
+			<label for="pass" class="col-md-2">Пароль</label>
+			<div class="col-md-10">
+				<input type="password" id="pass" class="form-control input-sm" placeholder="Введите пароль">
+			</div>
+		</div>		
+		<div class="form-group">
+			<label class="col-md-2" for="re_pass">Подтвердите пароль:</label>
+			<div class="col-md-10">
+				<input type="password" id="re_pass" class="form-control input-sm" placeholder="Подтвердите пароль">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-2">Выберите тип аккаунта:</label>
+			<div class="col-md-10">
+			<div class="radio-horizontal">
+				<label class="col-md-2">
+				<input type="radio" value="regular" name="account" checked="">Обычный аккаунт
+				</label>
+			</div>
+			
+			<div class="radio-horizontal">
+				<label>
+				<input type="radio" value="VIP" name="account">VIP аккаунт
+				</label>
+			</div>
+		</div>
+		</div>
+		<div class="form-group">		
+			<label for="number" class="col-md-2">Выберите любимое число:</label>
+			<div class="col-md-10">
+				<select class="form-control input-sm" id="number">
+				<option value="one">1</option>
+				<option value="two">2</option>
+				<option value="three">3</option>
+				<option value="four">4</option>
+				<option value="five">5</option>
+				<option value="six">6</option>
+				<option value="seven">7</option>
+				<option value="eight">8</option>
+				<option value="nine">9</option>
+				<option value="ten">10</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="interests">Расскажите коротко о Ваших интересах:</label>
+			<textarea class="form-control" id="interests" cols=50 rows=10 placeholder="Коротко об интересах"></textarea>
+		</div>
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" name="rules">Я согласен с <a href="rules.html" target="_blanc">Правилами</a>
+			</label>
+		</div>
+		<input type="submit" value="Подтвердить регистрацию" class="btn btn-info">
+		</form>
+	</div>
+	</div>		
+	</body>
+</html>
