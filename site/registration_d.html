@@ -24,7 +24,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="#" class="navbar-brand">Umbrella Corp</a>
+      <a href="#" class="navbar-brand"><img src="images/umbrella-icon.png" width="25px" height="25px" align="left">Umbrella Corp</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-0">
 			<ul class="nav navbar-nav">
@@ -32,7 +32,7 @@
 			<li><a href="about.html">О нас</a>
 			<li><a href="production.html">Наша продукция</a>
 			<li><a href="contacts.html">Контакты</a>
-			<li><a href="registration.html">Регистрация</a>
+			<li><a href="registration_d.html">Регистрация</a>
 			</ul>
 		</div>
 		</div>
@@ -42,21 +42,25 @@
 		</div>
 		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 		<form role="form" action="#" method="post" class="form-horizontal">
-		<div class="container-fluid"><img src="images/reg_button.jpg" alt="Регистрация" width=200></div>
+		<div class="container-fluid" style="text-align: center;"><img src="images/reg_button.jpg" alt="Регистрация" width=200 class="img-rounded" ></div>
 		<br>
 		<div class="form-group">
 			<label for="login_name" class="col-md-2">Логин:</label>
 			<div class="col-md-10">
-			<input type="text" id="login_name" class="form-control" placeholder="Введите Логин">
+			<input type="text" id="login_name" class="form-control input-sm" placeholder="Введите Логин">
 		</div>
 		</div>
 		<div class="form-group">
 			<label for="pass" class="col-md-2">Пароль</label>
-			<div class="col-md-10"><input type="password" id="pass" class="form-control" placeholder="Введите пароль"></div>
+			<div class="col-md-10">
+				<input type="password" id="pass" class="form-control input-sm" placeholder="Введите пароль">
+			</div>
 		</div>		
 		<div class="form-group">
 			<label class="col-md-2" for="re_pass">Подтвердите пароль:</label>
-			<div class="col-md-10"><input type="password" id="re_pass" class="form-control" placeholder="Подтвердите пароль"></div>
+			<div class="col-md-10">
+				<input type="password" id="re_pass" class="form-control input-sm" placeholder="Подтвердите пароль">
+			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-md-2">Выберите тип аккаунта:</label>
@@ -77,7 +81,7 @@
 		<div class="form-group">		
 			<label for="number" class="col-md-2">Выберите любимое число:</label>
 			<div class="col-md-10">
-				<select class="form-control" id="number">
+				<select class="form-control input-sm" id="number">
 				<option value="one">1</option>
 				<option value="two">2</option>
 				<option value="three">3</option>
@@ -100,7 +104,10 @@
 				<input type="checkbox" name="rules">Я согласен с <a href="rules.html" target="_blanc">Правилами</a>
 			</label>
 		</div>
-		<input type="submit" value="Подтвердить регистрацию" class="btn btn-info">
+		<button type="submit" class="btn btn-primary">
+			<i class="glyphicon glyphicon-ok"></i>
+			Подтвердить регистрацию
+		</button>
 		</form>
 	</div>
 	</div>		
