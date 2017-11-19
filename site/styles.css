@@ -14,3 +14,26 @@ a:visited {
 a:active {
 	color: A52A2A;
 }
+
+.header_image {
+	width:100%; 
+	height:20%;
+}
+
+.kitchen_logo {
+	width:50px;
+	height:50px;
+}
+
+.desktop_view_brand_name {
+	display:none;
+}
+
+@media only screen and (min-width: 768px) {
+  .kitchen_logo {
+  	display: none;
+  }
+  .desktop_view_brand_name {
+	display: inline-block;
+  }
+}
