@@ -29,7 +29,7 @@ a:active {
 	display:none;
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .kitchen_logo {
   	display: none;
   }
