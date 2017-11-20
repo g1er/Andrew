@@ -37,3 +37,14 @@ a:active {
 	display: inline-block;
   }
 }
+
+.brand_icon {
+	width: 25px; 
+	height: 25px;
+	float: left;
+}
+
+.index_equipment {
+	width: 75%;
+	height: auto;
+}
