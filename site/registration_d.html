@@ -59,23 +59,23 @@
 	            </div>
 	            <div class="modal-body">
 	              <p>Если Вы хотите подписаться на нашу рассылку новостей и просто хорошего настроения, введите ниже Ваши имя и почтовый ящик.</p>
-	              <form action="#" class="form-horizontal">
+	              <form action="registration_d.html" class="form-horizontal" method="GET">
 	                <div class="form-group">
 	                  <label class="col-md-2" for="firstname">Имя:</label>
 	                  <div class="col-md-10">
-	                  <input type="text" class="form-control" id="firstname" placeholder="Имя">
+	                  <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Имя">
 	                  </div>
 	                </div>
 	                <div class="form-group">
 	                  <label class="col-md-2" for="email">E-mail:</label>
 	                  <div class="col-md-10">
-	                  <input type="text" class="form-control" id="email" placeholder="E-mail">
+	                  <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
 	                  </div>
 	                </div>
+	                <div class="modal-footer">
+	                  <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-ok"></i> Подписаться</button>
+	                </div>
 	              </form>
-	            </div>
-	            <div class="modal-footer">
-	              <button class="btn btn-success" data-dismiss="modal"><i class="glyphicon glyphicon-ok"></i> Подписаться</button>
 	            </div>
 	          </div>
 	        </div>
@@ -83,25 +83,25 @@
 		</div>
 		
 		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		<form role="form" action="#" method="post" class="form-horizontal">
+		<form role="form" action="registration_d.html" method="GET" class="form-horizontal">
 		<div class="container-fluid" style="text-align: center;"><img src="images/reg_button.jpg" alt="Регистрация" width=200 class="img-rounded" style="margin-top: 10px"></div>
 		<br>
 		<div class="form-group">
 			<label for="login_name" class="col-md-2">Логин:</label>
 			<div class="col-md-10">
-			<input type="text" id="login_name" class="form-control input-sm" placeholder="Введите Логин">
+			<input type="text" id="login_name" name="name" class="form-control input-sm" placeholder="Введите Логин">
 		</div>
 		</div>
 		<div class="form-group">
 			<label for="pass" class="col-md-2">Пароль</label>
 			<div class="col-md-10">
-				<input type="password" id="pass" class="form-control input-sm" placeholder="Введите пароль">
+				<input type="password" id="pass" name="pass" class="form-control input-sm" placeholder="Введите пароль">
 			</div>
 		</div>		
 		<div class="form-group">
 			<label class="col-md-2" for="re_pass">Подтвердите пароль:</label>
 			<div class="col-md-10">
-				<input type="password" id="re_pass" class="form-control input-sm" placeholder="Подтвердите пароль">
+				<input type="password" id="re_pass" name="re_pass" class="form-control input-sm" placeholder="Подтвердите пароль">
 			</div>
 		</div>
 		<div class="form-group">
@@ -115,7 +115,7 @@
 			
 			<div class="radio-horizontal">
 				<label>
-				<input type="radio" value="VIP" name="account">VIP аккаунт
+				<input type="radio" value="VIP" name="vip_account">VIP аккаунт
 				</label>
 			</div>
 		</div>
@@ -139,7 +139,7 @@
 		</div>
 		<div class="form-group">
 			<label for="interests">Расскажите коротко о Ваших интересах:</label>
-			<textarea class="form-control" id="interests" cols=50 rows=10 placeholder="Коротко об интересах"></textarea>
+			<textarea class="form-control" id="interests" name="text_details" cols=50 rows=10 placeholder="Коротко об интересах"></textarea>
 		</div>
 		<div class="checkbox">
 			<label>
