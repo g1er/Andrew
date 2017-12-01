@@ -28,7 +28,7 @@
 			<ul class="nav navbar-nav">
 			<li  class="active"><a href="index_d.html">Главная</a>
 			<li><a href="about.html">О нас</a>
-			<li><a href="production.html">Наша продукция</a>
+			<li><a href="production_d.html">Наша продукция</a>
 			<li><a href="contacts.html">Контакты</a>
 			<li><a href="registration_d.html">Регистрация</a>
 			</ul>
@@ -57,23 +57,24 @@
             </div>
             <div class="modal-body">
               <p>Если Вы хотите подписаться на нашу рассылку новостей и просто хорошего настроения, введите ниже Ваши имя и почтовый ящик.</p>
-              <form action="#" class="form-horizontal">
+              <form action="index_d.html" class="form-horizontal" method="get">
                 <div class="form-group">
                   <label class="col-md-2" for="firstname">Имя:</label>
                   <div class="col-md-10">
-                  <input type="text" class="form-control" id="firstname" placeholder="Имя">
+                  <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Имя">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-2" for="email">E-mail:</label>
                   <div class="col-md-10">
-                  <input type="text" class="form-control" id="email" placeholder="E-mail">
+                  <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
                   </div>
                 </div>
+                <button type="submit" class="btn btn-success btn-block"><i class="glyphicon glyphicon-ok"></i> Подписаться</button>
               </form>
             </div>
             <div class="modal-footer">
-              <button class="btn btn-success" data-dismiss="modal"><i class="glyphicon glyphicon-ok"></i> Подписаться</button>
+              <h4 style="text-align: center;">Спасибо!</h4>
             </div>
           </div>
         </div>
