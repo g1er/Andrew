@@ -1,5 +1,6 @@
 ﻿<html>
 	<head>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="content type" content="text/html; charset=windows-1251">
 		<title>Кухонное технологическое оборудование</title>
@@ -7,16 +8,12 @@
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-		<style type="text/css">
-			body{
-				padding-top: 51px;
-			}
-		</style>
 	</head>
 <body>
-  <img src="images/logo2.jpg" width=100% height=20% alt="Шапка сайта">
-  
-	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+
+  <div class="hidden-xs"><img src="images/logo2.jpg" class="header_image" alt="Шапка сайта"></div> 
+	
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
 		<div class="container-fluid">
 		<div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-0">
@@ -25,7 +22,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="#" class="navbar-brand"><img src="images/umbrella-icon.png" width="25px" height="25px" align="left">Umbrella Corp</a>
+      <a href="#" class="navbar-brand"><img src="images/umbrella-icon.png" class="brand_icon"><span class="hidden-xs"> Umbrella Corp</span></a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-0">
 			<ul class="nav navbar-nav">
@@ -38,68 +35,58 @@
 		</div>
 		</div>
 	</nav>
-	<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+	
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="margin-top: 10px">
+      <button class="btn btn-info" data-toggle="collapse" data-target="#facts"><i class="glyphicon glyphicon-info-sign"></i> Знаете ли вы, что...</button>
+      <div class="collapse" id="facts">
+        <div class="panel panel-primary">
+          <div class="panel-body">
+            Ученые Эдинбургского университета пришли к выводу, что жизнь на Земле возникла благодаря потокам космической пыли, которые занесли на планету биологические молекулы или даже примитивные формы жизни. Об этом сообщается в пресс-релизе на сайте Phys.org. По словам исследователей, микроскопические живые организмы способны мигрировать с планеты на планету, когда пылевые потоки сталкиваются с внешними слоями атмосферы. Скорость потоков должна составлять 70 километров в секунду, чтобы частицы, находящиеся на высоте 150 километров над поверхностью, были выбиты за пределы гравитационного притяжения.
+          </div>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-  </nav>
-		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+      </div>
+<br><br>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#subscribe">Подписаться на рассылку</button>
+      <div class="modal fade" id="subscribe">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <batton class="close" data-dismiss="modal"><i class="glyphicon glyphicon-off"></i></batton>
+              <h4>Заявка на подписку</h4>
+            </div>
+            <div class="modal-body">
+              <p>Если Вы хотите подписаться на нашу рассылку новостей и просто хорошего настроения, введите ниже Ваши имя и почтовый ящик.</p>
+              <form action="#" class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-md-2" for="firstname">Имя:</label>
+                  <div class="col-md-10">
+                  <input type="text" class="form-control" id="firstname" placeholder="Имя">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-2" for="email">E-mail:</label>
+                  <div class="col-md-10">
+                  <input type="text" class="form-control" id="email" placeholder="E-mail">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-success" data-dismiss="modal"><i class="glyphicon glyphicon-ok"></i> Подписаться</button>
+            </div>
+          </div>
+        </div>
+      </div>
 		</div>
+
 		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 		<h1 align=center>Добро пожаловать на наш сайт!</h1>
 	<p>Мы производим кухонное технологическое оборудование под заказ. Качественно и в короткие сроки.</p>
 		<h1 align="center">Самая качественная продукция</h1>
-    <div class="container-fluid" style="text-align: center;">
-		<img src="images/equipment.jpg" alt="Технологическое оборудование" width=400 height=250>
-  </div>
+    <div style="text-align: center;">
+		<img src="images/equipment.jpg" alt="Технологическое оборудование" class="index_equipment">
+    </div>
 			<p>Все материалы и комплектующие европейского качества.</p>
 			<p>Производство и сервис выполняется на современных станках и с помощью новейшего оборудования.</p>
 			<p>Мы предоставляем нашим клиентам широкий ассортимент продукции и гибкие условия скидок.</p>

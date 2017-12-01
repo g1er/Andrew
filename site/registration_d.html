@@ -1,5 +1,6 @@
 ﻿<html>
 	<head>
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="content type" content="text/html; charset=windows-1251">
 		<title>Кухонное технологическое оборудование</title>
@@ -14,7 +15,7 @@
 		</style>
 	</head>
 	<body>
-		<img src="images/logo2.jpg" width=100% height=20% border="3" alt="Шапка сайта">
+		<div class="hidden-xs"><img src="images/logo2.jpg" class="header_image" alt="Шапка сайта"></div>
 	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
 		<div class="container-fluid">
 		<div class="navbar-header">
@@ -24,7 +25,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="#" class="navbar-brand"><img src="images/umbrella-icon.png" width="25px" height="25px" align="left">Umbrella Corp</a>
+      <a href="#" class="navbar-brand"><img src="images/umbrella-icon.png" class="brand_icon"><span class="hidden-xs"> Umbrella Corp</span></a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-0">
 			<ul class="nav navbar-nav">
@@ -37,29 +38,70 @@
 		</div>
 		</div>
 	</nav>
-	<div class="container">
-		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+	
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="margin-top: 10px">
+	      <button class="btn btn-info" data-toggle="collapse" data-target="#facts"><i class="glyphicon glyphicon-info-sign"></i> Знаете ли вы, что...</button>
+	      <div class="collapse" id="facts">
+	        <div class="panel panel-primary">
+	          <div class="panel-body">
+	            Ученые создали водоросли со вкусом бекона и ветчины. В них содержится огромное количество необходимых нашему организму витаминов и минералов. Основная цель изобретения - борьба с голодом в ряде стран Африки. Водоросли стоят недорого и могут обладать самыми разнообразными вкусами.
+	          </div>
+	        </div>
+	      </div>
+<br><br>
+		<button class="btn btn-primary" data-toggle="modal" data-target="#subscribe">Подписаться на рассылку</button>
+	      <div class="modal fade" id="subscribe">
+	        <div class="modal-dialog">
+	          <div class="modal-content">
+	            <div class="modal-header">
+	              <batton class="close" data-dismiss="modal"><i class="glyphicon glyphicon-off"></i></batton>
+	              <h4>Заявка на подписку</h4>
+	            </div>
+	            <div class="modal-body">
+	              <p>Если Вы хотите подписаться на нашу рассылку новостей и просто хорошего настроения, введите ниже Ваши имя и почтовый ящик.</p>
+	              <form action="#" class="form-horizontal">
+	                <div class="form-group">
+	                  <label class="col-md-2" for="firstname">Имя:</label>
+	                  <div class="col-md-10">
+	                  <input type="text" class="form-control" id="firstname" placeholder="Имя">
+	                  </div>
+	                </div>
+	                <div class="form-group">
+	                  <label class="col-md-2" for="email">E-mail:</label>
+	                  <div class="col-md-10">
+	                  <input type="text" class="form-control" id="email" placeholder="E-mail">
+	                  </div>
+	                </div>
+	              </form>
+	            </div>
+	            <div class="modal-footer">
+	              <button class="btn btn-success" data-dismiss="modal"><i class="glyphicon glyphicon-ok"></i> Подписаться</button>
+	            </div>
+	          </div>
+	        </div>
+	      </div>	      
 		</div>
+		
 		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		<form role="form" action="#" method="post" class="form-horizontal">
-		<div class="container-fluid" style="text-align: center;"><img src="images/reg_button.jpg" alt="Регистрация" width=200 class="img-rounded" ></div>
+		<form role="form" action="registration_d.html" method="get" class="form-horizontal">
+		<div class="container-fluid" style="text-align: center;"><img src="images/reg_button.jpg" alt="Регистрация" width=200 class="img-rounded" style="margin-top: 10px"></div>
 		<br>
 		<div class="form-group">
 			<label for="login_name" class="col-md-2">Логин:</label>
 			<div class="col-md-10">
-			<input type="text" id="login_name" class="form-control input-sm" placeholder="Введите Логин">
+			<input type="text" id="login_name" name="login_name" class="form-control input-sm" placeholder="Введите Логин">
 		</div>
 		</div>
 		<div class="form-group">
 			<label for="pass" class="col-md-2">Пароль</label>
 			<div class="col-md-10">
-				<input type="password" id="pass" class="form-control input-sm" placeholder="Введите пароль">
+				<input type="password" id="pass" name="pass" class="form-control input-sm" placeholder="Введите пароль">
 			</div>
 		</div>		
 		<div class="form-group">
 			<label class="col-md-2" for="re_pass">Подтвердите пароль:</label>
 			<div class="col-md-10">
-				<input type="password" id="re_pass" class="form-control input-sm" placeholder="Подтвердите пароль">
+				<input type="password" id="re_pass" name="re_pass" class="form-control input-sm" placeholder="Подтвердите пароль">
 			</div>
 		</div>
 		<div class="form-group">
@@ -97,11 +139,11 @@
 		</div>
 		<div class="form-group">
 			<label for="interests">Расскажите коротко о Ваших интересах:</label>
-			<textarea class="form-control" id="interests" cols=50 rows=10 placeholder="Коротко об интересах"></textarea>
+			<textarea class="form-control" id="interests" name="interests" cols=50 rows=10 placeholder="Коротко об интересах"></textarea>
 		</div>
 		<div class="checkbox">
 			<label>
-				<input type="checkbox" name="rules">Я согласен с <a href="rules.html" target="_blanc">Правилами</a>
+				<input type="checkbox" name="rules">Я согласен с <a href="rules.html" target="_blanc" class="italink">Правилами</a>
 			</label>
 		</div>
 		<button type="submit" class="btn btn-primary">
@@ -110,6 +152,6 @@
 		</button>
 		</form>
 	</div>
-	</div>		
+			
 	</body>
 </html>

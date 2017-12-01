@@ -2,9 +2,16 @@
 	background-color: E1D35D;
 	color: 2F4F4F;
 	font-family: Candara, serif;
+	padding-top: 51px;
 }
+
 a:link {
 	color: 2F4F4F;
+}
+
+.italink {
+	color: 2F4F4F;
+	font-style: italic;
 }
 
 a:visited {
@@ -36,4 +43,20 @@ a:active {
   .desktop_view_brand_name {
 	display: inline-block;
   }
+}
+
+.brand_icon {
+	width: 25px; 
+	height: 25px;
+	float: left;
+}
+
+.index_equipment {
+	width: 75%;
+	height: auto;
+	border-radius: 7px;
+}
+
+table thead th {
+	text-align: center;
 }
