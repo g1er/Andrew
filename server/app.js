@@ -32,6 +32,23 @@ server.on('request', function (req, res) {
 	    });
     }
     if (req.method == 'GET') {
-    	res.end('GET method');
+    	var url_parts = url.parse(req.url,true);
+    	if (url_parts.query) {
+    		var query = url_parts.query;
+    		res.write('<h1>Server received GET message: </h1>');
+    		for (var i in url_parts.query) {
+    			res.write('<h2>' + i + ' : <i  style="color:blue">' + query[i] + '</i></h2>');
+    		}
+    	}
+        console.log('q:', url_parts.query);
+		res.end(`
+        	<h3>Click to go back</h3>
+			<button onclick="goBack()">Go Back</button>
+			<script>
+				function goBack() {
+				    window.history.back();
+				}
+			</script>`
+		);
     }
 });
