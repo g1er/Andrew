@@ -17,3 +17,19 @@ $(document).ready(function(){
 
     });
 });
+
+$(document).ready(function(){
+    $("#subscr_form").submit(function(event){
+        var user_information = {
+            login_name : $("#firstname").val(),
+            email : $("#email").val(),
+        };
+
+        $.post("http://localhost:4200/formsubmit", user_information, function(result){
+            $("#message").css("display","block");
+        });
+        // prevent submittion of form - just need to remember the trick: to pass 'event' to function and to place event.preventDefault()
+        event.preventDefault();
+
+    });
+});

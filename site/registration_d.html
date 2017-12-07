@@ -60,7 +60,7 @@
 	            </div>
 	            <div class="modal-body">
 	              <p>Если Вы хотите подписаться на нашу рассылку новостей и просто хорошего настроения, введите ниже Ваши имя и почтовый ящик.</p>
-	              <form action="http://localhost:4200/api" class="form-horizontal" method="post">
+	              <form id="subscr_form" class="form-horizontal" method="post">
 	                <div class="form-group">
 	                  <label class="col-md-2" for="firstname">Имя:</label>
 	                  <div class="col-md-10">
@@ -75,7 +75,7 @@
 	                </div>
 	                <button type="submit" class="btn btn-success btn-block"><i class="glyphicon glyphicon-ok"></i> Подписаться</button>
 	              </form>
-	              <div id="message"></div>
+	              <div id="message" class="submit_message">Вы не пожалеете!</div>
 	            </div>
 	            <div class="modal-footer">
 	              <h4 style="text-align: center;">Спасибо!</h4>
