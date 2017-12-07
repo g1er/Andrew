@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script src="javascript/main.js"></script>
 		<style type="text/css">
 			body{
 				padding-top: 51px;
@@ -74,6 +75,7 @@
 	                </div>
 	                <button type="submit" class="btn btn-success btn-block"><i class="glyphicon glyphicon-ok"></i> Подписаться</button>
 	              </form>
+	              <div id="message"></div>
 	            </div>
 	            <div class="modal-footer">
 	              <h4 style="text-align: center;">Спасибо!</h4>
@@ -84,7 +86,7 @@
 		</div>
 		
 		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		<form role="form" action="http://localhost:4200/api" method="post" class="form-horizontal">
+		<form role="form" id="registration_form" class="form-horizontal" method="POST">
 		<div class="container-fluid" style="text-align: center;"><img src="images/reg_button.jpg" alt="Регистрация" width=200 class="img-rounded" style="margin-top: 10px"></div>
 		<br>
 		<div class="form-group">
@@ -152,6 +154,7 @@
 			Подтвердить регистрацию
 		</button>
 		</form>
+		<div id="submit_message" class="submit_message"><i>Thank you for submission</i></div>
 	</div>
 			
 	</body>
