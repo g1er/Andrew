@@ -8,6 +8,19 @@ var server = http.createServer().listen(port, function() {
 });
 
 server.on('request', function (req, res) {
+
+	res.setHeader('Access-Control-Allow-Origin', '*');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
     if (req.method == 'POST') {
         var body = '';
 	    req.on('data', function (data) {
@@ -32,6 +45,7 @@ server.on('request', function (req, res) {
 	    });
     }
     if (req.method == 'GET') {
+
     	var url_parts = url.parse(req.url,true);
     	if (url_parts.query) {
     		var query = url_parts.query;
