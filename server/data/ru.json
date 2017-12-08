@@ -1,0 +1,9 @@
+{
+	"navigation": {
+	"main"			: "Главная",
+	"about"			: "О нас",
+	"production"	: "Наша продукция",
+	"contacts"		: "Контакты",
+	"registration"	: "Регистрация"
+	}
+}

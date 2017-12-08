@@ -32,4 +32,29 @@ $(document).ready(function(){
         event.preventDefault();
 
     });
+
 });
+// load ru
+var loadRu = function() {
+    $.get("http://localhost:4200/translate/ru", function(result){
+    	var navigation = JSON.parse(result).navigation;
+		$("#main").text(navigation.main);
+		$("#about").text(navigation.about);
+		$("#production").text(navigation.production);
+		$("#contacts").text(navigation.contacts);
+		$("#registration").text(navigation.registration);
+    });	
+}
+// load en 
+var loadEn = function() {
+	$.get("http://localhost:4200/translate/en", function(result){
+    	var navigation = JSON.parse(result).navigation;
+		$("#main").text(navigation.main);
+		$("#about").text(navigation.about);
+		$("#production").text(navigation.production);
+		$("#contacts").text(navigation.contacts);
+		$("#registration").text(navigation.registration);
+    });
+}
+// load default
+loadRu();

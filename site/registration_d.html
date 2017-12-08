@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 	<head>
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,11 +30,12 @@
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-0">
 			<ul class="nav navbar-nav">
-			<li  class="active"><a href="index_d.html">Главная</a>
-			<li><a href="about.html">О нас</a>
-			<li><a href="production_d.html">Наша продукция</a>
-			<li><a href="contacts.html">Контакты</a>
-			<li><a href="registration_d.html">Регистрация</a>
+			<li  class="active"><a id="main" href="index_d.html"></a>
+			<li><a id="about" href="about.html"></a>
+			<li><a id="production" href="production_d.html"></a>
+			<li><a id="contacts" href="contacts.html"></a>
+			<li onclick="loadRu()"><a href="#">RU</a>
+			<li onclick="loadEn()"><a href="#">EN</a></li>
 			</ul>
 		</div>
 		</div>
@@ -60,7 +61,7 @@
 	            </div>
 	            <div class="modal-body">
 	              <p>Если Вы хотите подписаться на нашу рассылку новостей и просто хорошего настроения, введите ниже Ваши имя и почтовый ящик.</p>
-	              <form id="subscr_form" class="form-horizontal" method="post">
+	              <form action="http://localhost:4200/api" class="form-horizontal" method="post">
 	                <div class="form-group">
 	                  <label class="col-md-2" for="firstname">Имя:</label>
 	                  <div class="col-md-10">
@@ -75,7 +76,7 @@
 	                </div>
 	                <button type="submit" class="btn btn-success btn-block"><i class="glyphicon glyphicon-ok"></i> Подписаться</button>
 	              </form>
-	              <div id="message" class="submit_message">Вы не пожалеете!</div>
+	              <div id="message"></div>
 	            </div>
 	            <div class="modal-footer">
 	              <h4 style="text-align: center;">Спасибо!</h4>
@@ -86,7 +87,7 @@
 		</div>
 		
 		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-		<form role="form" id="registration_form" class="form-horizontal" method="POST">
+		<form role="form" id="registration_form" class="form-horizontal">
 		<div class="container-fluid" style="text-align: center;"><img src="images/reg_button.jpg" alt="Регистрация" width=200 class="img-rounded" style="margin-top: 10px"></div>
 		<br>
 		<div class="form-group">
@@ -155,6 +156,7 @@
 		</button>
 		</form>
 		<div id="submit_message" class="submit_message"><i>Thank you for submission</i></div>
+		<div id="test"></div>
 	</div>
 			
 	</body>

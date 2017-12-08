@@ -1,6 +1,7 @@
 var http = require('http');
 var querystring = require('querystring');
 var url = require('url');
+var fs = require('fs');
 var port = 4200;
 
 var server = http.createServer().listen(port, function() {
@@ -44,25 +45,57 @@ server.on('request', function (req, res) {
 			);
 	    });
     }
+
     if (req.method == 'GET') {
 
     	var url_parts = url.parse(req.url,true);
-    	if (url_parts.query) {
-    		var query = url_parts.query;
-    		res.write('<h1>Server received GET message: </h1>');
-    		for (var i in url_parts.query) {
-    			res.write('<h2>' + i + ' : <i  style="color:blue">' + query[i] + '</i></h2>');
-    		}
-    	}
-        console.log('q:', url_parts.query);
-		res.end(`
-        	<h3>Click to go back</h3>
-			<button onclick="goBack()">Go Back</button>
-			<script>
-				function goBack() {
-				    window.history.back();
+
+    	if(url_parts.pathname == '/translate/ru'){
+			fs.readFile("data/ru.json", function(err, data) {
+				if (err) {
+					res.write('error' + err)
+				} else {
+			    res.write(data);
+			    res.end();					
 				}
-			</script>`
-		);
+			});
+    	}
+
+    	else if(url_parts.pathname == '/translate/en'){
+			fs.readFile("data/en.json", function(err, data) {
+				if (err) {
+					res.write('error' + err)
+				} else {
+			    res.write(data);
+			    res.end();				
+				}
+			});
+    	}
+
+    	else {
+    		console.log('else')
+	    	if (url_parts.query) {
+	    		var query = url_parts.query;
+    			res.write('<h1>Server received GET message: </h1>');
+    			for (var i in url_parts.query) {
+    			res.write('<h2>' + i + ' : <i  style="color:blue">' + query[i] + '</i></h2>');
+    			}
+    		}
+
+			res.end(`
+			    <h3>Click to go back</h3>
+				<button onclick="goBack()">Go Back</button>
+				<script>
+					function goBack() {
+					    window.history.back();
+					}
+				</script>`
+			);
+
+    	}
+
+        console.log('query:', url_parts.query);
+    	console.log('pathname:', url_parts.pathname);
+
     }
 });
