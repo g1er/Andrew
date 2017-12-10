@@ -1,0 +1,15 @@
+{
+  "name": "production_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "kicker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrey M",
+  "license": "ISC",
+  "dependencies": {
+    "connect": "^3.4.0",
+    "serve-static": "^1.9.3"
+  }
+}
