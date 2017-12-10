@@ -1,6 +1,6 @@
 1) start server with ru.json / en.json 
 open command prompt (cli) and navigate inside 'server' folder of your project
-In command line type: npm app
+In command line type: node app
 
 2) install dependencies
 open other command line and navigate inside 'site' folder of your project
@@ -8,7 +8,7 @@ open other command line and navigate inside 'site' folder of your project
 3) inside 'site' folder of your project: 
    type npm install
 
-4) run static site using node.js (other / second)
+4) run static site using node.js (other / second):
    node kicker
 Note: I created the kicker.js in order to run static file in node.js 
 
