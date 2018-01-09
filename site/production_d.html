@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script src="javascript/main.js"></script>
 	</head>
 	<body>
 		<div class="hidden-xs"><img src="images/logo2.jpg" class="header_image" alt="Шапка сайта"></div>
@@ -25,11 +26,12 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-0">
 					<ul class="nav navbar-nav">
-					<li  class="active"><a href="index_d.html">Главная</a>
-					<li><a href="about.html">О нас</a>
-					<li><a href="production_d.html">Наша продукция</a>
-					<li><a href="contacts.html">Контакты</a>
-					<li><a href="registration_d.html">Регистрация</a>
+						<li  class="active"><a id="main" href="index_d.html"></a>
+						<li><a id="about" href="about.html"></a>
+						<li><a id="production" href="production_d.html"></a>
+						<li><a id="contacts" href="contacts.html"></a>
+						<li onclick="loadRu()"><a href="#">RU</a>
+						<li onclick="loadEn()"><a href="#">EN</a></li>
 					</ul>
 				</div>
 			</div>
