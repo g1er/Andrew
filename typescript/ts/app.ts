@@ -1,9 +1,7 @@
-class Main {
-    constructor() {
-    }
-    popUp() {
-        alert('Hello World!');
-    }
+function greeter(person) {
+    return "Hello, " + person;
 }
-let main = new Main();
-main.popUp();
+
+let user = "Jane User";
+
+document.body.innerHTML = greeter(user);
