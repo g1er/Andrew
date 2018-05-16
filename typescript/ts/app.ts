@@ -21,3 +21,7 @@ main.popUp();
 ///<reference path="product-class.ts" />
 var product = new Products("Car");
 product.logProductName();
+
+enum Cars {Jaguar, Audi, Wolksvagen, Lada, Mini};
+let carType: Cars = Cars.Wolksvagen;
+console.log(carType);
