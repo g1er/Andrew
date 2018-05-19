@@ -1,24 +1,4 @@
-function greeter(person) {
-    return "Hello, " + person;
-}
-var user = "Jane User";
-document.body.innerHTML = greeter(user);
-setTimeout(function () {
-    document.body.innerHTML = greeter(user);
-}, 1000);
-var Main = /** @class */ (function () {
-    function Main() {
-    }
-    Main.prototype.popUp = function () {
-        alert("Hello, World!");
-    };
-    return Main;
-}());
-var main = new Main();
-main.popUp();
-///<reference path="product-class.ts" />
-var product = new Products("Car");
-product.logProductName();
+// 4. execise with enum
 var Cars;
 (function (Cars) {
     Cars[Cars["Jaguar"] = 0] = "Jaguar";
@@ -30,6 +10,19 @@ var Cars;
 ;
 var carType = Cars.Wolksvagen;
 console.log(carType);
+carType = Cars.Lada;
+console.log(carType);
+// 1. first execise with greeter
+function greeter(person) {
+    return "Hello, " + person;
+}
+var user = "Jane User";
+if (document.body) {
+    document.body.innerHTML = greeter(user);
+}
+setTimeout(function () {
+    document.body.innerHTML = greeter(user);
+}, 1000);
 var Products = /** @class */ (function () {
     function Products(name) {
         this.name = name;
@@ -49,4 +42,19 @@ var Products = /** @class */ (function () {
     };
     return Products;
 }());
+///<reference path="products.ts" />
+// 3. execise with Products class make a call to class in other file
+var product = new Products("Car");
+product.logProductName();
+// 2. execise with classes (renamed Main to TestClass):
+var TestClass = /** @class */ (function () {
+    function TestClass() {
+    }
+    TestClass.prototype.popUp = function () {
+        alert("Hello, World!");
+    };
+    return TestClass;
+}());
+var main = new TestClass();
+main.popUp();
 //# sourceMappingURL=app.js.map
