@@ -3,20 +3,29 @@
 2) git add .
 3) git commit -m "adding code to repository"
 
-Check status in git interface
-1) gitk
+1) Check status in git interface
+gitk
 
-Branch off local repository
-1) git checkout -b new_branch_name
-Specifying -b causes a new branch
-//https://git-scm.com/docs/git-checkout
-Ex.: git checkout -b dev_andrew
-Switch between branches
-1) git checkout other_branch_name
+2) Clone remove branch
+git clone https://github.com/g1er/Andrew.git
 
- лонировать удаленный репо-ий, создать локальный(копи€)
-1) git clone https://github.com/g1er/Andrew.git
+3) check all branches and your current branch
+git branch -a
 
-«аписать код в удаленный репо-ий:
-1) git push  <REMOTENAME> <BRANCHNAME> 
-git push origin master 
+4) create your new local repository
+git checkout -b new_branch_name
+
+5) Switch between local branches
+git checkout other_branch_name
+
+6) check for tracked and untracked local changes ('red' changes - untracked, green changes - tracked)
+git status
+
+7) track local changes
+git add .
+
+8) commit local changes
+git commit -m "comment for my changes"
+
+9) push local changes to remove same branch (event you did not have the new branch before it will create automatically)
+git push origin branch_name 
