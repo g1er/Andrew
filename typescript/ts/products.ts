@@ -4,7 +4,7 @@ class Products{
     get productName(){
         return this.name;
     }
-    set productName(name){
+    set productName(name: string){
         this.name = name;
     }
     public logProductName(): any{
