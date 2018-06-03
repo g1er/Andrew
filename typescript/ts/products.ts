@@ -1,7 +1,7 @@
 class Products{
     constructor(private name: string){}
 
-    get productName(){
+    get productName(): string{
         return this.name;
     }
     set productName(name: string){
