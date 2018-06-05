@@ -10,5 +10,9 @@ class Products{
     public logProductName(): any{
         console.log("product:" + this.productName);
     }
-
+    static productType: string = "fruit";
+    static logProductType(): any{
+        console.log("Current product type: " + this.productType);
+    }
 }
+let prodType = Products.logProductType();
