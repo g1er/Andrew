@@ -7,12 +7,10 @@ class Products{
     set productName(name: string){
         this.name = name;
     }
-    public logProductName(): any{
+    public logProductName(){
         console.log("product:" + this.productName);
     }
-    static productType: string = "fruit";
-    static logProductType(): any{
-        console.log("Current product type: " + this.productType);
-    }
+    static onlineBot: string = "@freshproducts";
 }
-let prodType = Products.logProductType();
+let bot = Products.onlineBot;
+console.log("Add our tg-channel " + bot + " to be in touch with our updates!");
