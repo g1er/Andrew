@@ -40,8 +40,11 @@ var Products = /** @class */ (function () {
     Products.prototype.logProductName = function () {
         console.log("product:" + this.productName);
     };
+    Products.onlineBot = "@freshproducts";
     return Products;
 }());
+var bot = Products.onlineBot;
+console.log("Add our tg-channel " + bot + " to be in touch with our updates!");
 ///<reference path="products.ts" />
 // 3. execise with Products class make a call to class in other file
 var product = new Products("Car");
