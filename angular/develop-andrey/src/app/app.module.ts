@@ -15,6 +15,6 @@ import { My2Component } from './my2/my2.component';
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent, MyComponent, My2Component]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
