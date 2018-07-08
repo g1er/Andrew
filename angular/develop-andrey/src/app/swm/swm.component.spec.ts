@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { My2Component } from './my2.component';
+import { SwmComponent } from './swm.component';
 
-describe('My2Component', () => {
-  let component: My2Component;
-  let fixture: ComponentFixture<My2Component>;
+describe('SwmComponent', () => {
+  let component: SwmComponent;
+  let fixture: ComponentFixture<SwmComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ My2Component ]
+      declarations: [ SwmComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(My2Component);
+    fixture = TestBed.createComponent(SwmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
