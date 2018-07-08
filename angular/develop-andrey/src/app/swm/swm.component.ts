@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-swm',
   templateUrl: "./swm.component.html",
   styleUrls: ["./swm.component.css"]
 })
-export class SwmComponent implements OnInit {
+export class SwmComponent {
 
-  constructor() { }
-
-  ngOnInit() {
+  addText = "";
+  addNewText(){
+    this.addText = "Let competitions begin!";
   }
+
+  textFieldValue = "";
+  onKeyUp(event){
+    this.textFieldValue = event.target.value
+  }
+
 
 }

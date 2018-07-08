@@ -1,3 +1,7 @@
 <div class="container">
-  swm works!
+  <input type="button" class="btn btn-info" value="Start" (click) = addNewText()>
+  <br><br>
+  <p>{{ addText }}</p>
+  <input type="text" class="form-control" (input) = onKeyUp($event)>
+  <p>{{ textFieldValue }}</p>
 </div>
