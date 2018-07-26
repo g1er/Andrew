@@ -6,14 +6,26 @@
   <input type="text" class="form-control" [(ngModel)] = "textFieldValue">
   <p>{{ textFieldValue }}</p> -->
 
-  <!-- ngIF ELSE -->
-  <input id = "styleLine" type="text" class="form-control" placeholder="batterfly, backstroke, breaststroke, freestyle"><br>
-  <input type="button" class="btn btn-warning" value="Switch" (click) = chosenStyle()>
-  <p *ngIf = "!swimStyleStatus; else choseReply">
+  <!-- ngIF ELSE ft. ngClass & ngStyle--> 
+ <div [ngStyle] = "{'border': '2px solid #abc'}" [ngClass] = "{swimBlockStyle: true}">
+  <input id = "styleLine" type="text" class="form-control" placeholder="butterfly, backstroke, breaststroke, freestyle" (input) = activeButton($event)><br>
+
+  <input type="button" class="btn btn-warning" value="Switch" (click) = chosenStyle() [disabled] = "!styleStatus">
+
+  <p *ngIf = "!styleStatus">
+    This style is not active!
+  </p>
+
+  <p *ngIf = "!swimStyleStatus || !styleStatus; else choseReply">
     Choose your swimming style!
   </p>
+
   <ng-template #choseReply>
     <p>You chose {{ swimStyle }}! Get ready for race!</p>
   </ng-template>
+</div> 
+
+  <!-- ngFor -->
+<p *ngFor = "let swStyle of swimStyles; let i = index">{{(i + 1) + " " + swStyle}}</p>
 
 </div>

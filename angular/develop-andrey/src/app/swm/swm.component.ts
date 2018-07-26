@@ -25,5 +25,16 @@ export class SwmComponent {
     this.swimStyle = (<HTMLInputElement>document.getElementById("styleLine")).value;
     if (this.swimStyle == "") this.swimStyleStatus = false;
   }
+  
+  styleStatus: boolean = true;
+  activeStyle: string = "";
+
+  activeButton(event){
+    this.activeStyle = event.target.value;
+    if (this.activeStyle == "freestyle") this.styleStatus = false;
+      else this.styleStatus = true;
+  }
+
+  swimStyles = ["bfly", "bkstroke", "brstroke", "fstyle"];
 
 }
