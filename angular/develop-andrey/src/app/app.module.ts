@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SwmComponent } from './swm/swm.component';
+import { SwmStartListComponent } from './swm-start-list/swm-start-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SwmComponent
+    SwmComponent,
+    SwmStartListComponent
   ],
   imports: [
     BrowserModule,

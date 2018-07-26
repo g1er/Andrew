@@ -35,6 +35,5 @@ export class SwmComponent {
       else this.styleStatus = true;
   }
 
-  swimStyles = ["bfly", "bkstroke", "brstroke", "fstyle"];
 
 }
