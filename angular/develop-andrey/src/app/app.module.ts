@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SwmComponent } from './swm/swm.component';
 import { SwmStartListComponent } from './swm-start-list/swm-start-list.component';
+import { RegFormComponent } from './reg-form/reg-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SwmComponent,
-    SwmStartListComponent
+    SwmStartListComponent,
+    RegFormComponent
   ],
   imports: [
     BrowserModule,

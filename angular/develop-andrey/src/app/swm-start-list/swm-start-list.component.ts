@@ -6,12 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./swm-start-list.component.css']
 })
 export class SwmStartListComponent {
-
-  partName: string = "";
-  partSwStyle: string = "";
-  partDistance: any = "";
-  maxPart: boolean = false;
-
+  
   participants: {name: string, swStyle: string, distance: number}[] = [{
     name: "Tom Long",
     swStyle: "freestyle",
@@ -28,18 +23,7 @@ export class SwmStartListComponent {
     distance: 400
   }]
 
-  register(){
-    this.participants.push({
-      name: this.partName,
-      swStyle: this.partSwStyle,
-      distance: this.partDistance
-    })
-
-    this.partName = "";
-    this.partSwStyle = "";
-    this.partDistance = "";
-    if (this.participants.length == 12) this.maxPart = true;
-    console.log(this.participants.length);
+  addParticipant(participant: {name: string, swStyle: string, distance: number}){
+    this.participants.push(participant);
   }
-
 }
