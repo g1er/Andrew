@@ -2,3 +2,4 @@
   <h3>Start List:</h3>
   <p *ngFor="let participant of participants, let i = index">{{(i+1) + " " + participant.name + ", " + participant.swStyle + ", " + participant.distance}}</p>
 </div>
+<app-reg-form (onAddParticipant) = addParticipant($event)></app-reg-form>
