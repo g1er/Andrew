@@ -12,6 +12,7 @@ export class RegFormComponent implements OnInit {
   partDistance: any = "";
   maxPart: boolean = false;
 
+
   @Output() onAddParticipant = new EventEmitter<{name: string, swStyle: string, distance: number}>();
 
   register(){
@@ -26,6 +27,7 @@ export class RegFormComponent implements OnInit {
     this.partDistance = "";
     // if (this.participants.length == 12) this.maxPart = true;
     // console.log(this.participants.length);
+
   }
 
 
