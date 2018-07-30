@@ -1,5 +1,5 @@
-.startListStyle{
+.swimBlockStyle{
     border: 1px solid #abc;
     border-radius: 7px;
-    padding-top: 5px
+    padding: 10px
 }

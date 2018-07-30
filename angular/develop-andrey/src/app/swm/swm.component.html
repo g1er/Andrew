@@ -7,7 +7,7 @@
   <p>{{ textFieldValue }}</p> -->
 
   <!-- ngIF ELSE ft. ngClass & ngStyle--> 
- <div [ngStyle] = "{'border': '2px solid #abc'}" [ngClass] = "{swimBlockStyle: true}">
+ <div class="swimBlockStyle">
   <input id = "styleLine" type="text" class="form-control" placeholder="butterfly, backstroke, breaststroke, freestyle" (input) = activeButton($event)><br>
 
   <input type="button" class="btn btn-warning" value="Switch" (click) = chosenStyle() [disabled] = "!styleStatus">
