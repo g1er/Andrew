@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { SwmComponent } from './swm/swm.component';
 import { SwmStartListComponent } from './swm-start-list/swm-start-list.component';
 import { RegFormComponent } from './reg-form/reg-form.component';
+import { FontDirective } from './directives/font.directive';
+import { colorDirective } from './directives/color.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SwmComponent,
     SwmStartListComponent,
-    RegFormComponent
+    RegFormComponent,
+    FontDirective,
+    colorDirective
   ],
   imports: [
     BrowserModule,
