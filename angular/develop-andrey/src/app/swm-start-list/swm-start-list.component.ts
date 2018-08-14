@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./swm-start-list.component.css']
 })
 export class SwmStartListComponent {
+
+  bdayName: string = 'Bob';
   
   participants: {name: string, swStyle: string, distance: number}[] = [{
     name: "Tom Long",
