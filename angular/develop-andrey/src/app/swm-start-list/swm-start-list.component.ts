@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SwmStartListComponent {
 
-  bdayName: string = 'Bob';
+  // bdayName: string = 'Bob';
+  athSearch = '';
   
   participants: {name: string, swStyle: string, distance: number}[] = [{
     name: "Tom Long",

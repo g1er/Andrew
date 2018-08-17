@@ -9,6 +9,7 @@ import { RegFormComponent } from './reg-form/reg-form.component';
 import { FontDirective } from './directives/font.directive';
 import { colorDirective } from './directives/color.directive';
 import { BdayPipe } from './pipes/bday.pipe';
+import { PersonFilterPipe } from './pipes/person-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BdayPipe } from './pipes/bday.pipe';
     RegFormComponent,
     FontDirective,
     colorDirective,
-    BdayPipe
+    BdayPipe,
+    PersonFilterPipe
   ],
   imports: [
     BrowserModule,
