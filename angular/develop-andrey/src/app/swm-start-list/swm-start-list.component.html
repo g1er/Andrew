@@ -2,7 +2,7 @@
   <app-reg-form (onAddParticipant) = addParticipant($event)></app-reg-form><hr>
   <input type="text" class="form-control" placeholder="Athlete search..." [(ngModel)] = athSearch >
   <h3 appColor>Start List:</h3>
-  <p appFont [hoverFont] = "'24px'" [defaultFont] = "'18px'" *ngFor="let participant of participants | personFilter:athSearch:'swStyle'; let i = index">{{(i+1) + " " + participant.name + ", " + participant.swStyle + ", " + participant.distance}}</p>
+  <p appFont [hoverFont] = "'24px'" [defaultFont] = "'18px'" *ngFor="let participant of participants | personFilter:athSearch:'name'; let i = index">{{(i+1) + " " + participant.name + ", " + participant.swStyle + ", " + participant.distance}}</p>
   <hr>
   <!-- <p> {{ bdayName | appBday:24 }} </p> -->
 </div>
