@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SwmComponent } from './swm/swm.component';
@@ -10,6 +11,8 @@ import { FontDirective } from './directives/font.directive';
 import { colorDirective } from './directives/color.directive';
 import { BdayPipe } from './pipes/bday.pipe';
 import { PersonFilterPipe } from './pipes/person-filter.pipe';
+import { SwimResultComponent } from './components/swim-results/swim-result/swim-result.component';
+import { ResultsService } from './services/results.service';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,15 @@ import { PersonFilterPipe } from './pipes/person-filter.pipe';
     FontDirective,
     colorDirective,
     BdayPipe,
-    PersonFilterPipe
+    PersonFilterPipe,
+    SwimResultComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ResultsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
