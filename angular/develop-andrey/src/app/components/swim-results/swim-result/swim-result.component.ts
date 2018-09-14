@@ -30,8 +30,11 @@ export class SwimResultComponent implements OnInit {
       error => console.error(error),
       () => console.log('complete')
     );
-
+    // вот здесь выдает сообщение что не удается найти имя Rx
+    console.log(Rx); 
   }
  
+  // RxJS practice block
+  
 
 }
