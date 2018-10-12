@@ -14,27 +14,59 @@ export class SwimResultComponent implements OnInit {
   constructor(private resultsService: ResultsService) {}
 
   ngOnInit() {
-    this.resultsService.getResultList().subscribe( 
-      results => {
-        console.log(results);
-        this.swimmers = results;
-       } , 
-      error => console.error(error),
-      () => console.log('complete')
-    );
+    // this.resultsService.getResultList().subscribe( 
+    //   results => {
+    //     console.log(results);
+    //     this.swimmers = results;
+    //    } , 
+    //   error => console.error(error),
+    //   () => console.log('complete')
+    // );
 
-    this.resultsService.getPublicApiResults().subscribe(
-      results => {
-        console.log(results);
-       } , 
-      error => console.error(error),
-      () => console.log('complete')
-    );
+    // this.resultsService.getPublicApiResults().subscribe(
+    //   results => {
+    //     console.log(results);
+    //    } , 
+    //   error => console.error(error),
+    //   () => console.log('complete')
+    // );
     // вот здесь выдает сообщение что не удается найти имя Rx
-    console.log(Rx); 
+    //console.log(Observable); 
   }
- 
-  // RxJS practice block
-  
-
 }
+
+// RxJS practice block
+var stream$ = Observable.create(function(observer){
+  observer.next('One');
+
+  setTimeout(function(){
+    observer.next('After 5 sec.')
+  }, 7000);
+
+  setTimeout(function(){
+    observer.error("What's happen?!")
+  }, 4000);
+
+  setTimeout(function(){
+    observer.next('After 3 sec.')
+  }, 3000);  
+
+  setTimeout(function(){
+    observer.complete()
+  }, 5500);
+
+  observer.next('Two');
+});
+
+stream$
+  .subscribe(
+    function(data){
+      console.log('Subscribe:', data);
+    },
+    function(error){
+      console.log('Error:', error);
+    },
+    function(){
+      console.log('Completed!');
+    }
+)
