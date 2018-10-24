@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, fromEvent } from 'rxjs';
 import { of, throwError } from 'rxjs';
 import { ResultsService } from '../../../services/results.service';
 
@@ -70,3 +70,14 @@ stream$
       console.log('Completed!');
     }
 )
+
+
+var btn = document.querySelector('button'); 
+
+var evnt$ = fromEvent(btn, 'click');
+
+// Проблемы начинаются после подписывания на событие через .subscribe
+evnt$.subscribe(function(e){
+  console.log(e);
+  
+})
