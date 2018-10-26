@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { Observable, fromEvent } from 'rxjs';
 import { of, throwError } from 'rxjs';
 import { ResultsService } from '../../../services/results.service';
@@ -11,6 +11,8 @@ import { ResultsService } from '../../../services/results.service';
 export class SwimResultComponent implements OnInit {
   // private resultList: Observable<any>;
   public swimmers: any;
+  @ViewChild('eventBtn') eventBtn;
+
   constructor(private resultsService: ResultsService) {}
 
   ngOnInit() {
@@ -33,6 +35,29 @@ export class SwimResultComponent implements OnInit {
     // вот здесь выдает сообщение что не удается найти имя Rx
     //console.log(Observable); 
   }
+
+  // var btn = document.querySelector('button'); 
+
+  //var evnt$ = fromEvent(btn, 'click');
+
+  clickButtonEvent(btnElement) {
+  
+  console.log("this.eventBtn.nativeElement: ", this.eventBtn.nativeElement);
+    console.log("button html element from clickButtonEvent: ", btnElement);
+    let clickButtonEvnt$ = fromEvent(btnElement, 'click');
+    clickButtonEvnt$.subscribe(function(e){
+      console.log(e);
+    });
+  }
+
+  @HostListener('click', ['$event.target']) onClick(btn) {
+    console.log("button html element from HostListener: ", btn);
+    let hostListenerEvent$ = fromEvent(btn, 'click');
+    hostListenerEvent$.subscribe(function(e){
+      console.log(e);
+    });
+  }
+
 }
 
 // RxJS practice block
@@ -49,7 +74,7 @@ var stream$ = Observable.create(function(observer){
 
   setTimeout(function(){
     observer.next('After 3 sec.')
-  }, 3000);  
+  }, 3000);
 
   setTimeout(function(){
     observer.complete()
@@ -71,7 +96,6 @@ stream$
     }
 )
 
-
 var btn = document.querySelector('button'); 
 
 var evnt$ = fromEvent(btn, 'click');
@@ -81,3 +105,4 @@ evnt$.subscribe(function(e){
   console.log(e);
   
 })
+
