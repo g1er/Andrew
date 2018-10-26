@@ -96,4 +96,13 @@ stream$
     }
 )
 
+var btn = document.querySelector('button'); 
+
+var evnt$ = fromEvent(btn, 'click');
+
+// Проблемы начинаются после подписывания на событие через .subscribe
+evnt$.subscribe(function(e){
+  console.log(e);
+  
+})
 
