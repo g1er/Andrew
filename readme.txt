@@ -29,3 +29,7 @@ git commit -m "comment for my changes"
 
 9) push local changes to remove same branch (event you did not have the new branch before it will create automatically)
 git push origin branch_name 
+
+10) git clone создает копию удаленного (в общем случае) репозитория. Чтобы получить бранч из удаленного репозитория нужно после git clone выполнить:
+
+git checkout -b [branch] [remotename]/[branch] (Expl: git checkout -b develop-andrey origin/develop-andrey)
